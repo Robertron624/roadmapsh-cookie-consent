@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,19 +9,56 @@
   <body>
     <main>
       <section>
-        <h1>
-          Hello world
-        </h1>
+        <h1>Hello world</h1>
       </section>
     </main>
-    <div class="cookies-wrapper visible">
+    <div class="cookies-wrapper">
       <div class="box">
-        <p class="message">
-          We use cookies to improve your user experience
-        </p>
-        <button class="accept">
-          I like cookies
+        <div class="header">
+          <button
+          class="close"
+          id="close-cookie-banner"
+          aria-expanded="true"
+          aria-controls="cookie-banner"
+          aria-haspopup="true"
+          aria-label="Close cookie banner"
+          title="Close cookie banner"
+          type="button"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            id="Filled"
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="close-icon"
+          >
+            <path
+              d="M18,6h0a1,1,0,0,0-1.414,0L12,10.586,7.414,6A1,1,0,0,0,6,6H6A1,1,0,0,0,6,7.414L10.586,12,6,16.586A1,1,0,0,0,6,18H6a1,1,0,0,0,1.414,0L12,13.414,16.586,18A1,1,0,0,0,18,18h0a1,1,0,0,0,0-1.414L13.414,12,18,7.414A1,1,0,0,0,18,6Z"
+            />
+          </svg>
         </button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            id="Layer_1"
+            data-name="Layer 1"
+            viewBox="0 0 24 24"
+            width="36"
+            height="36"
+            fill="currentColor"
+            class="cookie-icon"
+          >
+            <circle cx="18.5" cy="1.5" r="1.5" />
+            <circle cx="21.5" cy="6.5" r="1.5" />
+            <path
+              d="M24,12A12,12,0,1,1,12,0c.387,0,.769.021,1.146.057l.824.077.078.824a10,10,0,0,0,8.994,8.994l.824.078.077.824C23.979,11.231,24,11.613,24,12ZM8.5,7A1.5,1.5,0,1,0,10,8.5,1.5,1.5,0,0,0,8.5,7Zm0,7A1.5,1.5,0,1,0,10,15.5,1.5,1.5,0,0,0,8.5,14Zm7-1A1.5,1.5,0,1,0,17,14.5,1.5,1.5,0,0,0,15.5,13Z"
+            />
+          </svg>
+
+        </div>
+        <p class="message">We use cookies to improve your user experience</p>
+        <button class="accept">I like cookies</button>
       </div>
     </div>
     <script type="module" src="/src/main.ts"></script>

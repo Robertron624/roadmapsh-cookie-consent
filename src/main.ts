@@ -2,7 +2,15 @@ import './style.css'
 
 
 function main(){
-  console.log('Hello world!')
+  const cookiesWrapper = document.querySelector('.cookies-wrapper')
+
+  console.log(cookiesWrapper)
+
+  if(!cookiesWrapper) return
+
+  setTimeout(():void=> {
+    cookiesWrapper.classList.add('visible')
+  }, 2000)
 }
 
 document.addEventListener('DOMContentLoaded', main)
