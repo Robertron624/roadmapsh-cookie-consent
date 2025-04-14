@@ -81,7 +81,9 @@ h1, h2, h3, p {
 /* Custom styles */
 
 .cookies-wrapper {
-  display: none;
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: opacity 0.5s ease, transform 0.5s ease;
   position: absolute;
   bottom: 10%;
   right: 5cqw;
@@ -90,10 +92,13 @@ h1, h2, h3, p {
   padding: 1rem 1rem 2rem 1rem;
   border-radius: 1rem;
   max-width: 15rem;
+  pointer-events: none; /* evita que se pueda clicar cuando no está visible */
 }
 
-.cookies-wrapper.visible{
-  display: block;
+.cookies-wrapper.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .cookies-wrapper .box {
