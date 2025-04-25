@@ -1,33 +1,32 @@
 import './style.css'
 
 
-function main(){
-  let savedConsent = localStorage.getItem('cookie-consent')
-  if(savedConsent === 'true') return
-    
+function main() {
+  const savedConsent = localStorage.getItem('cookie-consent')
+  if (savedConsent === 'true') return
 
-  let consent = false
-
-  const cookiesWrapper = document.querySelector('.cookies-wrapper')
+  const cookiesWrapper = document.querySelector('.cookies-wrapper') as HTMLElement
   const closeButton = document.querySelector('.cookies-wrapper .close')
   const acceptButton = document.querySelector('.cookies-wrapper .accept')
-  
-  if(!cookiesWrapper) return
+  if (!cookiesWrapper) return
+
+  // We "render" the cookies banner after the DOM is loaded before making it visible
+  // to avoid the flickering effect when the page loads
+  // and the banner is not yet rendered
+  cookiesWrapper.classList.add('rendered')
 
   closeButton?.addEventListener('click', () => {
     cookiesWrapper.classList.remove('visible')
-    // localStorage.setItem('cookie-consent', 'false')
+    localStorage.setItem('cookie-consent', 'false')
   })
+
   acceptButton?.addEventListener('click', () => {
     cookiesWrapper.classList.remove('visible')
-    // localStorage.setItem('cookie-consent', 'true')
-    consent = true
-    console.log('consent -> ', consent ? 'You have accepted cookies' : 'You have rejected cookies')
+    localStorage.setItem('cookie-consent', 'true')
   })
-  // Show the cookies wrapper after 2 seconds
-  // if the user has not already accepted or rejected cookies
 
-  setTimeout(():void=> {
+  // Show the banner with a delay of 2 seconds using an animation
+  setTimeout(() => {
     cookiesWrapper.classList.add('visible')
   }, 2000)
 }

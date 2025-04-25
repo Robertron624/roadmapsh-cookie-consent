@@ -83,7 +83,6 @@ h1, h2, h3, p {
 .cookies-wrapper {
   opacity: 0;
   transform: translateY(1rem);
-  transition: opacity 0.5s ease, transform 0.5s ease;
   position: absolute;
   bottom: 10%;
   right: 5cqw;
@@ -93,6 +92,14 @@ h1, h2, h3, p {
   border-radius: 1rem;
   max-width: 15rem;
   pointer-events: none;
+
+  visibility: hidden;
+}
+
+.cookies-wrapper.rendered {
+  visibility: visible;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+
 }
 
 .cookies-wrapper.visible {
